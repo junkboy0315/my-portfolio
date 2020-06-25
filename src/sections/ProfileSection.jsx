@@ -107,7 +107,8 @@ const ProfileSection = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                バンド活動<IconExtLink />
+                バンド活動
+                <IconExtLink />
               </a>
               <br />
               車の修理
@@ -152,16 +153,20 @@ const ProfileSection = () => {
               rel="noopener noreferrer"
               css={styles.link}
             >
-              Nutanixによるプライベートクラウド基盤の構築<IconExtLink />
-            </a>や、
+              Nutanixによるプライベートクラウド基盤の構築
+              <IconExtLink />
+            </a>
+            や、
             <a
               href="https://jpn.nec.com/case/city.hamada/index.html"
               target="_blank"
               rel="noopener noreferrer"
               css={styles.link}
             >
-              SDNの導入<IconExtLink />
-            </a>などを手がける。
+              SDNの導入
+              <IconExtLink />
+            </a>
+            などを手がける。
           </p>
           <p>
             またプライベートにおいて、React、NodeJS、Docker、Kubernatesなどの技術を独学する。
@@ -186,11 +191,17 @@ const ProfileSection = () => {
           </p>
           <p>
             <b>1．いとも簡単に・たやすく</b>
-            <br />例）ゆうにできらぁや<br />解）簡単にできますよ
+            <br />
+            例）ゆうにできらぁや
+            <br />
+            解）簡単にできますよ
           </p>
           <p>
             <b>2．ゆっくりと・ゆったりと</b>
-            <br />例）ゆうに食べちゃんさいね<br />解）ゆっくり召し上がってくださいね
+            <br />
+            例）ゆうに食べちゃんさいね
+            <br />
+            解）ゆっくり召し上がってくださいね
           </p>
           <p>
             Yuuniworksという商号には、「問題をさらっと鮮やかに解決して、のんびりとした人生を送る」という意味を込めています。
