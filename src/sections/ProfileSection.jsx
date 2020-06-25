@@ -148,7 +148,7 @@ const ProfileSection = () => {
           <p>
             自治体のIT部門において主にインフラ管理を担当。
             <a
-              href="https://www.nutanix.jp/company/customers/all-customers/hamada-city/"
+              href="https://www.nutanix.com/jp/company/local-customers/hamada-city"
               target="_blank"
               rel="noopener noreferrer"
               css={styles.link}
