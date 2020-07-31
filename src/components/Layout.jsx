@@ -37,11 +37,6 @@ const TemplateWrapper = ({ children, location }) => {
           href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&amp;subset=japanese&amp;display=swap"
           rel="stylesheet"
         />
-        <script
-          data-ad-client="ca-pub-7134126650568891"
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-        ></script>
       </Helmet>
       <Header location={location} />
 
