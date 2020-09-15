@@ -62,7 +62,13 @@ const FooterSection = props => {
   };
 
   return (
-    <SectionContainer id="contact" colorNumber="2" skew skewFillBottom>
+    <SectionContainer
+      id="contact"
+      colorNumber="2"
+      skew
+      skewFillBottom
+      fadeOnAppear
+    >
       <SectionHeader text="お問い合わせ・ご連絡先" colorNumber="2" />
 
       <div css={styles.container}>

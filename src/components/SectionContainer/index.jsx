@@ -8,6 +8,7 @@ const propTypes = {
     PropTypes.node,
   ]).isRequired,
   colorNumber: PropTypes.string,
+  fadeOnAppear: PropTypes.bool,
   id: PropTypes.string,
   isTop: PropTypes.bool,
   skew: PropTypes.bool,
@@ -17,6 +18,7 @@ const propTypes = {
 
 const defaultProps = {
   colorNumber: null,
+  fadeOnAppear: false,
   id: null,
   isTop: false,
   skew: false,
@@ -27,6 +29,7 @@ const defaultProps = {
 const SectionContainer = ({
   children,
   colorNumber,
+  fadeOnAppear,
   id,
   isTop,
   skew,
@@ -75,7 +78,7 @@ const SectionContainer = ({
 
   return (
     <section id={id} css={styles.container}>
-      <FadeOnAppear>{children}</FadeOnAppear>
+      {fadeOnAppear ? <FadeOnAppear>{children}</FadeOnAppear> : children}
 
       {skew ? <div css={styles.bgLayer} /> : null}
 

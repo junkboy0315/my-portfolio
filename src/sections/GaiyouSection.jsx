@@ -68,7 +68,7 @@ const GaiyouSection = props => {
   };
 
   return (
-    <SectionContainer id="gaiyou">
+    <SectionContainer id="gaiyou" fadeOnAppear>
       <SectionHeader text="概要" colorNumber="1" />
 
       <WhiteBox css={styles.container}>

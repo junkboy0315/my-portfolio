@@ -80,7 +80,7 @@ const SkillSection = props => {
   };
 
   return (
-    <SectionContainer id="skill" colorNumber="2" skew>
+    <SectionContainer id="skill" colorNumber="2" skew fadeOnAppear>
       <SectionHeader text="スキル" colorNumber="2" />
       <div css={styles.grid}>
         <WhiteBox css={styles.whiteBox}>

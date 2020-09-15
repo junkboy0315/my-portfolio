@@ -59,7 +59,13 @@ const ProfileSection = () => {
   };
 
   return (
-    <SectionContainer id="profile" colorNumber="2" skew skewReverse>
+    <SectionContainer
+      id="profile"
+      colorNumber="2"
+      skew
+      skewReverse
+      fadeOnAppear
+    >
       <SectionHeader text="プロフィール" colorNumber="2" />
 
       <div css={styles.container}>

@@ -161,7 +161,7 @@ const PerformanceSection = () => {
   };
 
   return (
-    <SectionContainer id="performance">
+    <SectionContainer id="performance" fadeOnAppear>
       <SectionHeader text="実績" colorNumber="1" />
 
       {/* グリッド始点 */}

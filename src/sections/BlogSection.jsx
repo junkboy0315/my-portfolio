@@ -29,7 +29,7 @@ const BlogSection = () => {
   };
 
   return (
-    <SectionContainer id="blog">
+    <SectionContainer id="blog" fadeOnAppear>
       <SectionHeader text="ブログ" colorNumber="1" />
       <Link to="/blog/" css={styles.link}>
         Yuuniworks Blog
