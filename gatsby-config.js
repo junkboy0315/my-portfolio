@@ -8,6 +8,7 @@ module.exports = {
     siteUrl: config.siteUrl,
   },
   plugins: [
+    'gatsby-plugin-typescript',
     'gatsby-plugin-glamor',
     'gatsby-plugin-react-helmet',
     {
