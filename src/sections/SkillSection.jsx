@@ -50,8 +50,9 @@ const SkillSection = props => {
       opacity: 0.8,
     },
     awsBadge: {
-      width: '80px',
+      display: 'inline-block',
       marginRight: '0.5rem',
+      width: '80px',
     },
   };
 
@@ -132,16 +133,18 @@ const SkillSection = props => {
                   資格
                 </div>
                 <div css={styles.sonotaContent}>
-                  <AwsBadge
-                    css={styles.awsBadge}
-                    cclaimBadgeId="0a5d0729-6520-46ab-9172-008e9911ac0a"
-                    certType="saa"
-                  />
-                  <AwsBadge
-                    css={styles.awsBadge}
-                    cclaimBadgeId="5df6c2c4-e3b3-4688-949e-29f6e853d613"
-                    certType="clf"
-                  />
+                  <div css={styles.awsBadge}>
+                    <AwsBadge
+                      cclaimBadgeId="0a5d0729-6520-46ab-9172-008e9911ac0a"
+                      certType="saa"
+                    />
+                  </div>
+                  <div css={styles.awsBadge}>
+                    <AwsBadge
+                      cclaimBadgeId="5df6c2c4-e3b3-4688-949e-29f6e853d613"
+                      certType="clf"
+                    />
+                  </div>
                 </div>
               </li>
               <li css={styles.otherListItem}>

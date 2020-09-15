@@ -5,16 +5,13 @@ import awsSaaPng from '../../images/aws_saa.png';
 
 const propTypes = {
   cclaimBadgeId: PropTypes.string.isRequired,
-  className: PropTypes.string,
   certType: PropTypes.oneOf(['saa', 'clf']).isRequired,
 };
 
-const defaultProps = {
-  className: null,
-};
+const defaultProps = {};
 
 const AwsBadge = props => {
-  const { cclaimBadgeId, className, certType } = props;
+  const { cclaimBadgeId, certType } = props;
 
   const styles = {
     anchor: {
@@ -44,7 +41,6 @@ const AwsBadge = props => {
 
   return (
     <a
-      className={className}
       css={styles.anchor}
       href={`https://www.youracclaim.com/badges/${cclaimBadgeId}/public_url`}
       rel="noopener noreferrer"
