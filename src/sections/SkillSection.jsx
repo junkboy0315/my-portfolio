@@ -1,13 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import React from 'react';
+import AwsBadge from '../components/AwsBadge/AwsBadge';
 import SectionContainer from '../components/SectionContainer';
 import SectionHeader from '../components/SectionHeader';
 import Skill from '../components/Skill';
 import WhiteBox from '../components/WhiteBox';
 import questionSvg from '../icons/question.svg';
-import awsClfPng from '../images/aws_clf.png';
-import awsSaaPng from '../images/aws_saa.png';
 
 const SkillSection = props => {
   const styles = {
@@ -49,11 +48,6 @@ const SkillSection = props => {
     caret: {
       marginRight: '.5rem',
       opacity: 0.8,
-    },
-    link: {
-      color: '#262626',
-      cursor: 'pointer',
-      textDecorationLine: 'underline',
     },
     awsBadge: {
       width: '80px',
@@ -138,30 +132,16 @@ const SkillSection = props => {
                   資格
                 </div>
                 <div css={styles.sonotaContent}>
-                  <a
-                    href="https://www.certmetrics.com/amazon/public/badge.aspx?i=1&t=c&d=2019-08-29&ci=AWS00969819&language=en"
-                    css={styles.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      src={awsSaaPng}
-                      css={styles.awsBadge}
-                      alt="AWS SAA Logo"
-                    />
-                  </a>
-                  <a
-                    href="https://www.certmetrics.com/amazon/public/badge.aspx?i=9&t=c&d=2019-08-05&ci=AWS00969819&language=en"
-                    css={styles.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      src={awsClfPng}
-                      css={styles.awsBadge}
-                      alt="AWS CLF Logo"
-                    />
-                  </a>
+                  <AwsBadge
+                    css={styles.awsBadge}
+                    cclaimBadgeId="0a5d0729-6520-46ab-9172-008e9911ac0a"
+                    certType="saa"
+                  />
+                  <AwsBadge
+                    css={styles.awsBadge}
+                    cclaimBadgeId="5df6c2c4-e3b3-4688-949e-29f6e853d613"
+                    certType="clf"
+                  />
                 </div>
               </li>
               <li css={styles.otherListItem}>
