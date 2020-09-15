@@ -23,12 +23,18 @@ const FadeOnAppear: React.FC<Props> = ({
     if (!element) return;
 
     anim.current = gsap
-      .from(fadeTargetRef.current, {
-        delay: delayMs / 1000,
-        duration: durationMs / 1000,
-        opacity: 0,
-        y: 20,
-      })
+      .fromTo(
+        fadeTargetRef.current,
+        {
+          y: 20,
+        },
+        {
+          delay: delayMs / 1000,
+          duration: durationMs / 1000,
+          opacity: 1,
+          y: 0,
+        },
+      )
       .pause();
 
     const options = {
@@ -55,7 +61,11 @@ const FadeOnAppear: React.FC<Props> = ({
     }
   }, [isIntersecting]);
 
-  return <div ref={fadeTargetRef}>{children}</div>;
+  return (
+    <div css={{ opacity: 0 }} ref={fadeTargetRef}>
+      {children}
+    </div>
+  );
 };
 
 export default FadeOnAppear;

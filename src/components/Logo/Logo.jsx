@@ -14,18 +14,25 @@ const Logo = () => {
     },
     path: {
       fill: 'white',
+      opacity: 0,
     },
   };
 
   useEffect(() => {
-    gsap.from(svgRef.current.children, {
-      delay: 0.5,
-      duration: 0.7,
-      opacity: 0,
-      stagger: 0.05,
-      y: -100,
-      ease: 'bounce.out',
-    });
+    gsap.fromTo(
+      svgRef.current.children,
+      {
+        y: -100,
+      },
+      {
+        delay: 0.5,
+        duration: 0.7,
+        opacity: 1,
+        stagger: 0.05,
+        y: 0,
+        ease: 'bounce.out',
+      },
+    );
   }, []);
 
   return (

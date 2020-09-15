@@ -17,15 +17,15 @@ const Fade: React.FC<Props> = ({
   const fadeTargetRef = useRef(null);
 
   useEffect(() => {
-    gsap.from(fadeTargetRef.current, {
+    gsap.to(fadeTargetRef.current, {
       delay: delayMs / 1000,
       duration: durationMs / 1000,
-      opacity: 0,
+      opacity: 1,
     });
   }, []);
 
   return (
-    <div className={className} ref={fadeTargetRef}>
+    <div className={className} css={{ opacity: 0 }} ref={fadeTargetRef}>
       {children}
     </div>
   );
