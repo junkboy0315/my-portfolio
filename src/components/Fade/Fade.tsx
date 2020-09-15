@@ -2,12 +2,14 @@ import gsap from 'gsap';
 import React, { useEffect, useRef } from 'react';
 
 export type Props = {
+  className: any;
   children: React.ReactElement;
   delayMs?: number;
   durationMs?: number;
 };
 
 const Fade: React.FC<Props> = ({
+  className,
   children,
   delayMs = 0,
   durationMs = 1000,
@@ -22,7 +24,11 @@ const Fade: React.FC<Props> = ({
     });
   }, []);
 
-  return <div ref={fadeTargetRef}>{children}</div>;
+  return (
+    <div className={className} ref={fadeTargetRef}>
+      {children}
+    </div>
+  );
 };
 
 export default Fade;

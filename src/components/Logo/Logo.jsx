@@ -23,7 +23,8 @@ const Logo = () => {
       duration: 0.7,
       opacity: 0,
       stagger: 0.05,
-      x: 25,
+      y: -100,
+      ease: 'bounce.out',
     });
   }, []);
 

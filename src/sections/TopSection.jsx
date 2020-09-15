@@ -1,5 +1,4 @@
-import gsap from 'gsap';
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { Link as LinkForScroll } from 'react-scroll';
 import Fade from '../components/Fade';
 import IconExtLink from '../components/IconExtLink';
@@ -8,18 +7,6 @@ import arrowSvg from '../icons/arrow.svg';
 import topImageJpg from '../images/top-image.jpg';
 
 const TopSection = () => {
-  const descriptionRef = useRef();
-
-  useEffect(() => {
-    gsap.from(descriptionRef.current, {
-      duration: 0.5,
-      delay: 1.0,
-      opacity: 0,
-      y: 10,
-      ease: 'power2.out',
-    });
-  }, []);
-
   const styles = {
     container: {
       alignItems: 'center',
@@ -45,8 +32,9 @@ const TopSection = () => {
       cursor: 'pointer',
       marginBottom: '54px',
       position: 'absolute',
-      width: '45px',
+      width: '65px',
       animation: 'downArrow 0.8s ease-out infinite',
+      padding: '10px',
     },
   };
 
@@ -55,30 +43,26 @@ const TopSection = () => {
       <div css={styles.logo}>
         <Logo />
       </div>
-      <div css={styles.description} ref={descriptionRef}>
-        田村翔太と申します。
-        <br />
-        <a
-          href="https://goo.gl/maps/HjyoY7NJ9j92"
-          css={{ color: 'white' }}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          島根県浜田市
-          <IconExtLink color="#fff" />
-        </a>
-        を拠点に活動する
-        <br />
-        フルスタックエンジニアです。
-      </div>
-      <Fade delayMs={1200} durationMs={500}>
-        <LinkForScroll
-          to="gaiyou"
-          smooth
-          duration={150}
-          offset={-50}
-          css={styles.arrow}
-        >
+      <Fade delayMs={1000}>
+        <div css={styles.description}>
+          田村翔太と申します。
+          <br />
+          <a
+            href="https://goo.gl/maps/HjyoY7NJ9j92"
+            css={{ color: 'white' }}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            島根県浜田市
+            <IconExtLink color="#fff" />
+          </a>
+          を拠点に活動する
+          <br />
+          フルスタックエンジニアです。
+        </div>
+      </Fade>
+      <Fade delayMs={1000} css={styles.arrow}>
+        <LinkForScroll to="gaiyou" smooth duration={150} offset={-50}>
           <img src={arrowSvg} alt="下向きの矢印" />
         </LinkForScroll>
       </Fade>
