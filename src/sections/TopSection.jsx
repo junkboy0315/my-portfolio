@@ -1,11 +1,24 @@
-import React from 'react';
+import gsap from 'gsap';
+import React, { useEffect, useRef } from 'react';
 import { Link as LinkForScroll } from 'react-scroll';
 import IconExtLink from '../components/IconExtLink';
+import Logo from '../components/Logo';
 import arrowSvg from '../icons/arrow.svg';
-import logoSvg from '../icons/logo.svg';
 import topImageJpg from '../images/top-image.jpg';
 
 const TopSection = () => {
+  const descriptionRef = useRef();
+
+  useEffect(() => {
+    gsap.from(descriptionRef.current, {
+      duration: 0.5,
+      delay: 0.9,
+      opacity: 0,
+      y: 20,
+      ease: 'power2.out',
+    });
+  }, []);
+
   const styles = {
     container: {
       alignItems: 'center',
@@ -20,6 +33,7 @@ const TopSection = () => {
     logo: {
       width: '450px',
       maxWidth: '80%',
+      marginBottom: '1.45rem',
     },
     description: {
       color: '#fff',
@@ -37,19 +51,23 @@ const TopSection = () => {
 
   return (
     <section id="top" css={styles.container}>
-      <h1 css={styles.logo}>
-        <img src={logoSvg} alt="Yuuniworksのロゴ" />
-      </h1>
-      <div css={styles.description}>
-        田村翔太と申します。<br />
+      <div css={styles.logo}>
+        <Logo />
+      </div>
+      <div css={styles.description} ref={descriptionRef}>
+        田村翔太と申します。
+        <br />
         <a
           href="https://goo.gl/maps/HjyoY7NJ9j92"
           css={{ color: 'white' }}
           target="_blank"
           rel="noopener noreferrer"
         >
-          島根県浜田市<IconExtLink color="#fff" />
-        </a>を拠点に活動する<br />
+          島根県浜田市
+          <IconExtLink color="#fff" />
+        </a>
+        を拠点に活動する
+        <br />
         フルスタックエンジニアです。
       </div>
       <LinkForScroll
