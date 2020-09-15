@@ -1,6 +1,7 @@
 import gsap from 'gsap';
 import React, { useEffect, useRef } from 'react';
 import { Link as LinkForScroll } from 'react-scroll';
+import Fade from '../components/Fade';
 import IconExtLink from '../components/IconExtLink';
 import Logo from '../components/Logo';
 import arrowSvg from '../icons/arrow.svg';
@@ -12,9 +13,9 @@ const TopSection = () => {
   useEffect(() => {
     gsap.from(descriptionRef.current, {
       duration: 0.5,
-      delay: 0.9,
+      delay: 1.0,
       opacity: 0,
-      y: 20,
+      y: 10,
       ease: 'power2.out',
     });
   }, []);
@@ -70,15 +71,17 @@ const TopSection = () => {
         <br />
         フルスタックエンジニアです。
       </div>
-      <LinkForScroll
-        to="gaiyou"
-        smooth
-        duration={150}
-        offset={-50}
-        css={styles.arrow}
-      >
-        <img src={arrowSvg} alt="下向きの矢印" />
-      </LinkForScroll>
+      <Fade delayMs={1200} durationMs={500}>
+        <LinkForScroll
+          to="gaiyou"
+          smooth
+          duration={150}
+          offset={-50}
+          css={styles.arrow}
+        >
+          <img src={arrowSvg} alt="下向きの矢印" />
+        </LinkForScroll>
+      </Fade>
     </section>
   );
 };

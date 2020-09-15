@@ -10,7 +10,7 @@ const Logo = () => {
 
   const styles = {
     svg: {
-      overflow: 'visible',
+      overflow: 'visible !important',
     },
     path: {
       fill: 'white',
@@ -19,10 +19,11 @@ const Logo = () => {
 
   useEffect(() => {
     gsap.from(svgRef.current.children, {
-      duration: 1,
       delay: 0.5,
+      duration: 0.7,
       opacity: 0,
-      stagger: 0.025,
+      stagger: 0.05,
+      x: 25,
     });
   }, []);
 
