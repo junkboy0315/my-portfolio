@@ -14,8 +14,8 @@ const FadeOnAppear: React.FC<Props> = ({
   durationMs = 500,
   offset = 100,
 }) => {
-  const fadeTargetRef = useRef(null);
-  const anim = useRef(null);
+  const fadeTargetRef = useRef<HTMLDivElement>(null);
+  const anim = useRef<gsap.core.Tween>();
   const [isIntersecting, setIsIntersecting] = useState(false);
 
   useEffect(() => {
@@ -53,11 +53,11 @@ const FadeOnAppear: React.FC<Props> = ({
     return () => {
       observer.unobserve(element);
     };
-  }, []);
+  }, [delayMs, durationMs, offset]);
 
   useEffect(() => {
     if (isIntersecting) {
-      anim.current.restart();
+      anim.current?.restart();
     }
   }, [isIntersecting]);
 
