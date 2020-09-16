@@ -22,6 +22,7 @@ const Fade: React.FC<Props> = ({
       duration: durationMs / 1000,
       opacity: 1,
     });
+    children;
   }, []);
 
   return (
