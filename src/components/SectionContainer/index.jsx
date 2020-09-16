@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import FadeOnAppear from '../FadeOnAppear';
+import Fade from '../Fade';
 
 const propTypes = {
   children: PropTypes.oneOfType([
@@ -78,7 +78,7 @@ const SectionContainer = ({
 
   return (
     <section id={id} css={styles.container}>
-      {fadeOnAppear ? <FadeOnAppear>{children}</FadeOnAppear> : children}
+      {fadeOnAppear ? <Fade lazy>{children}</Fade> : children}
 
       {skew ? <div css={styles.bgLayer} /> : null}
 

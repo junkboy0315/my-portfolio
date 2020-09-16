@@ -1,11 +1,13 @@
-import gsap from 'gsap';
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
+import { applyFadeAnim } from '../../gsap/applyFadeAnim';
+import { applyFadeOnAppearAnim } from '../../gsap/applyFadeOnAppearAnim';
 
 export type Props = {
   className: any;
   children: React.ReactElement;
   delayMs?: number;
   durationMs?: number;
+  lazy: boolean;
 };
 
 const Fade: React.FC<Props> = ({
@@ -13,20 +15,19 @@ const Fade: React.FC<Props> = ({
   children,
   delayMs = 0,
   durationMs = 1000,
+  lazy = false,
 }) => {
-  const fadeTargetRef = useRef(null);
-
-  useEffect(() => {
-    gsap.to(fadeTargetRef.current, {
-      delay: delayMs / 1000,
-      duration: durationMs / 1000,
-      opacity: 1,
-    });
-    children;
-  }, []);
+  const applyAnim = (el: HTMLDivElement) => {
+    if (!el) return;
+    if (lazy) {
+      applyFadeOnAppearAnim(el);
+    } else {
+      applyFadeAnim(el, { delayMs, durationMs });
+    }
+  };
 
   return (
-    <div className={className} css={{ opacity: 0 }} ref={fadeTargetRef}>
+    <div className={className} css={{ opacity: 0 }} ref={applyAnim}>
       {children}
     </div>
   );
