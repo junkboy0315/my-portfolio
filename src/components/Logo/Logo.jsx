@@ -22,13 +22,16 @@ const Logo = () => {
     gsap.fromTo(
       svgRef.current.children,
       {
-        y: -100,
+        y: -80,
       },
       {
         delay: 0.5,
         duration: 0.7,
         opacity: 1,
-        stagger: 0.05,
+        stagger: {
+          amount: 0.5,
+          from: 'random',
+        },
         y: 0,
         ease: 'bounce.out',
       },

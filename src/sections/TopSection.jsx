@@ -43,7 +43,7 @@ const TopSection = () => {
       <div css={styles.logo}>
         <Logo />
       </div>
-      <Fade delayMs={1000}>
+      <Fade delayMs={1500} durationMs={300}>
         <div css={styles.description}>
           田村翔太と申します。
           <br />
@@ -61,7 +61,7 @@ const TopSection = () => {
           フルスタックエンジニアです。
         </div>
       </Fade>
-      <Fade delayMs={1000} css={styles.arrow}>
+      <Fade delayMs={1500} durationMs={300} css={styles.arrow}>
         <LinkForScroll to="gaiyou" smooth duration={150} offset={-50}>
           <img src={arrowSvg} alt="下向きの矢印" />
         </LinkForScroll>
