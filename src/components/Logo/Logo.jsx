@@ -25,7 +25,7 @@ const Logo = () => {
         y: -80,
       },
       {
-        delay: 0.5,
+        delay: 0.3,
         duration: 0.7,
         opacity: 1,
         stagger: {

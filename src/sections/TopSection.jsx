@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link as LinkForScroll } from 'react-scroll';
 import Fade from '../components/Fade';
 import IconExtLink from '../components/IconExtLink';
@@ -7,6 +7,7 @@ import arrowSvg from '../icons/arrow.svg';
 import topImageJpg from '../images/top-image.jpg';
 
 const TopSection = () => {
+  const [isTopImageLoaded, setIsTopImageLoaded] = useState(false);
   const styles = {
     container: {
       alignItems: 'center',
@@ -38,12 +39,20 @@ const TopSection = () => {
     },
   };
 
-  return (
+  useEffect(() => {
+    const img = new Image();
+    img.onload = () => {
+      setIsTopImageLoaded(true);
+    };
+    img.src = topImageJpg;
+  }, []);
+
+  return isTopImageLoaded ? (
     <section id="top" css={styles.container}>
       <div css={styles.logo}>
         <Logo />
       </div>
-      <Fade delayMs={1500} durationMs={300}>
+      <Fade delayMs={1000} durationMs={300}>
         <div css={styles.description}>
           田村翔太と申します。
           <br />
@@ -61,12 +70,14 @@ const TopSection = () => {
           フルスタックエンジニアです。
         </div>
       </Fade>
-      <Fade delayMs={1500} durationMs={300} css={styles.arrow}>
+      <Fade delayMs={1000} durationMs={300} css={styles.arrow}>
         <LinkForScroll to="gaiyou" smooth duration={150} offset={-50}>
           <img src={arrowSvg} alt="下向きの矢印" />
         </LinkForScroll>
       </Fade>
     </section>
+  ) : (
+    <div style={{ height: '100vh', background: '#6292F1' }} />
   );
 };
 
