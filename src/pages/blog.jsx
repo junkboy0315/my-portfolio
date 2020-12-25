@@ -77,7 +77,7 @@ const BlogPage = ({ data, location }) => {
               <WhiteBox hover>
                 <article css={styles.boxInner}>
                   <h1 css={styles.title}>{node.frontmatter.title}</h1>
-                  <div css={styles.summary}>{node.frontmatter.summary}</div>
+                  {/* <div css={styles.summary}>{node.frontmatter.summary}</div> */}
                   <time css={styles.datetime} dateTime={node.frontmatter.date}>
                     {node.frontmatter.date.slice(0, 10)}
                   </time>
