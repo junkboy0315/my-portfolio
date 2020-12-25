@@ -1,7 +1,6 @@
 /* eslint-disable react/no-danger */
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { DiscussionEmbed } from 'disqus-react';
 import { graphql } from 'gatsby';
 import Link from 'gatsby-link';
 import 'prismjs/themes/prism-tomorrow.css';
@@ -167,12 +166,6 @@ export default function BlogPost(props) {
 
   const post = props.data.markdownRemark;
 
-  const disqusConfig = {
-    url: `http://www.yuuniworks.com/blog${post.fields.slug}`,
-    identifier: `http://www.yuuniworks.com/blog${post.fields.slug}`,
-    title: post.frontmatter.title,
-  };
-
   return (
     <Layout location={props.location}>
       <SectionContainer colorNumber="1" isTop>
@@ -194,12 +187,6 @@ export default function BlogPost(props) {
               <h1 css={styles.title}>{post.frontmatter.title}</h1>
               <div dangerouslySetInnerHTML={{ __html: post.html }} />
             </article>
-          </WhiteBox>
-
-          <WhiteBox>
-            <aside css={styles.comments}>
-              <DiscussionEmbed shortname="yuuniworks" config={disqusConfig} />
-            </aside>
           </WhiteBox>
 
           <WhiteBox>
