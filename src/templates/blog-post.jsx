@@ -228,10 +228,8 @@ export const query = graphql`
       }
       frontmatter {
         title
-        summary
         date
         dateModified
-        thumbnail
       }
     }
   }

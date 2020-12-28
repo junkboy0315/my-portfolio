@@ -11,26 +11,17 @@ module.exports = {
     'gatsby-plugin-typescript',
     'gatsby-plugin-glamor',
     'gatsby-plugin-react-helmet',
+    `gatsby-plugin-sharp`,
     {
       resolve: 'gatsby-plugin-feed',
       options: {
         feeds: [
           {
             serialize: ({ query: { site, allMarkdownRemark } }) =>
-              allMarkdownRemark.edges.map(edge =>
+              allMarkdownRemark.edges.map((edge) =>
                 Object.assign({}, edge.node.frontmatter, {
-                  description: edge.node.frontmatter.summary,
-                  url: `${site.siteMetadata.siteUrl}/blog${
-                    edge.node.fields.slug
-                  }`,
-                  guid: `${site.siteMetadata.siteUrl}/blog${
-                    edge.node.fields.slug
-                  }`,
-                  enclosure: {
-                    url:
-                      site.siteMetadata.siteUrl +
-                      edge.node.frontmatter.thumbnail,
-                  },
+                  url: `${site.siteMetadata.siteUrl}/blog${edge.node.fields.slug}`,
+                  guid: `${site.siteMetadata.siteUrl}/blog${edge.node.fields.slug}`,
                 }),
               ),
             query: `
@@ -43,9 +34,7 @@ module.exports = {
                       fields { slug }
                       frontmatter {
                         title
-                        summary
                         date
-                        thumbnail
                       }
                     }
                   }
@@ -58,9 +47,9 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-google-analytics',
+      resolve: 'gatsby-plugin-google-gtag',
       options: {
-        trackingId: config.googleAnalyticsID,
+        trackingIds: [config.googleAnalyticsID],
       },
     },
     {
@@ -111,7 +100,7 @@ module.exports = {
           }
         `,
         serialize: ({ site, allSitePage }) =>
-          allSitePage.edges.map(edge => ({
+          allSitePage.edges.map((edge) => ({
             url: site.siteMetadata.siteUrl + edge.node.path,
             changefreq: 'daily',
             priority: 0.7,
@@ -146,17 +135,6 @@ module.exports = {
       options: {
         plugins: [
           'gatsby-remark-prismjs',
-          // gatsby-remark-imagesは、mdファイル内の画像のリンク先が相対パスの時のみ動作する。
-          // Netlify CMSでアップした画像は、config.yamlのpublic_folderで
-          // 指定した、'/'から始まる絶対パスに変換される。
-          // このままではgatsby-remark-imagesが動作しない。
-          // この問題を解消するため、下記のプラグインを使って画像のsrcを相対パスにあらかじめ変換する。
-          {
-            resolve: 'gatsby-remark-relative-images',
-            options: {
-              name: 'blogImagesFolder',
-            },
-          },
           {
             resolve: 'gatsby-remark-images',
             options: {

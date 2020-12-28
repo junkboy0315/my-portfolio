@@ -1,10 +1,8 @@
 ---
 layout: blog
 title: Nuxt.js + Firestore によるアプリケーションの作成
-summary: 資産運用におけるリバランス作業を支援する「Portfolio Rebalancer」というアプリケーションを作成しました。
 date: 2018-10-18T04:25:43.357Z
 dateModified: 2018-10-18T04:25:43.359Z
-thumbnail: /blogImages/20181018-3.jpg
 ---
 
 資産運用におけるリバランス作業を簡単にする、[Portfolio Rebalancer](https://rebalancer.yuuniworks.com/)
@@ -26,15 +24,15 @@ thumbnail: /blogImages/20181018-3.jpg
 
 ### アセットクラスの今の情報を入力します
 
-![portfolio](/blogImages/20181018-1.jpg)
+![portfolio](../../static/blogImages/20181018-1.jpg)
 
 ### 追加（or 売却）したい額を入力します
 
-![rebalance setting](/blogImages/20181018-2.jpg)
+![rebalance setting](../../static/blogImages/20181018-2.jpg)
 
 ### 結果が表示されます
 
-![rebalance results](/blogImages/20181018-3.jpg)
+![rebalance results](../../static/blogImages/20181018-3.jpg)
 
 ## 作り方
 

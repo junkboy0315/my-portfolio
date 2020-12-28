@@ -1,7 +1,6 @@
 ---
 layout: blog
 title: 'Developed a pairwise testing tool'
-summary: that can generate test cases online.
 date: 2019-10-23T15:00:00Z
 dateModified: 2019-10-23T15:00:00Z
 ---
@@ -20,7 +19,7 @@ So, I created a online tool for creating pairwise test cases. It's powered by Mi
 
 [https://pairwise.yuuniworks.com](https://pairwise.yuuniworks.com)
 
-![Pairwise Pict Online](/blogImages/20191023.png)
+![Pairwise Pict Online](../../static/blogImages/20191023.png)
 
 You can simply pass test elements to the left side and you'll get results. Ta-dah!
 

@@ -1,10 +1,8 @@
 ---
 layout: blog
 title: DockerとAndroid Emulatorを同時に使う
-summary: ついにAndroid Emulatorが、Hyper-Vをサポート対象としたようです。
 date: 2018-08-22T01:17:37.367Z
 dateModified: 2018-08-22T01:17:37.368Z
-thumbnail: /blogImages/20180822.png
 ---
 
 これまで Windows 環境では、Docker（Hyper-V）と Android Emulator(HAXM)を同時に使用できませんでした。
@@ -31,7 +29,7 @@ Docker と React Native の開発を同時に行う際などは、その都度 H
 * Windows 10 のバージョンが 1803 以上であること
 * Windows の機能で、「Windows ハイパーバイザープラットフォーム」が有効化されていること。
 
-![Windowsの機能](/blogImages/20180822.png)
+![Windowsの機能](../../static/blogImages/20180822.png)
 
 ## 参考
 

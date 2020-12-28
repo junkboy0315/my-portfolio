@@ -47,10 +47,6 @@ const BlogPage = ({ data, location }) => {
       marginBottom: '1rem',
       textAlign: 'left',
     },
-    summary: {
-      color: '#262626',
-      marginBottom: rhythm(2 / 3),
-    },
     datetime: {
       color: '#999',
       display: 'block',
@@ -77,7 +73,6 @@ const BlogPage = ({ data, location }) => {
               <WhiteBox hover>
                 <article css={styles.boxInner}>
                   <h1 css={styles.title}>{node.frontmatter.title}</h1>
-                  {/* <div css={styles.summary}>{node.frontmatter.summary}</div> */}
                   <time css={styles.datetime} dateTime={node.frontmatter.date}>
                     {node.frontmatter.date.slice(0, 10)}
                   </time>
@@ -121,9 +116,7 @@ export const query = graphql`
         node {
           frontmatter {
             title
-            summary
             date
-            thumbnail
           }
           fields {
             slug

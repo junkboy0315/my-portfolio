@@ -1,10 +1,8 @@
 ---
 layout: blog
 title: react-fontawesomeを使ってみる
-summary: Font Awesomeのスピードを改善するため、react-fontawesomeを使ってみました。
 date: '2018-04-18T10:18:57+09:00'
 dateModified: '2018-08-10T08:18:57+09:00'
-thumbnail: /blogImages/20180418.png
 ---
 
 ※ 2018/08/10 `@fortawesome/react-fontawesome`が v0.0 から v0.1 にアップグレードされ、仕様が変わったので記事を更新しました
@@ -19,7 +17,7 @@ thumbnail: /blogImages/20180418.png
 
 しかし、この方法だとフォントが表示されるまでに時間もかかってしまいます。また、レンダリングをブロックするらしく、PageSpeed Tools に改善事項として指摘されます。
 
-![PageSpeed Toolsでの警告画面](/blogImages/20180418.png)
+![PageSpeed Toolsでの警告画面](../../static/blogImages/20180418.png)
 
 JS の読み込みを非同期にして改善する方法も検討したのですが、少し面倒そうです。
 

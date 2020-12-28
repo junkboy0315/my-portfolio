@@ -1,0 +1,16 @@
+{
+  "name": "my-portfolio",
+  "dockerComposeFile": [
+    "docker-compose.yml"
+  ],
+  "service": "my-portfolio-gatsby",
+  "workspaceFolder": "/workspace",
+  "settings": {
+    "terminal.integrated.shell.linux": null
+  },
+  "extensions": [
+    "dbaeumer.vscode-eslint",
+    "eamodio.gitlens",
+    "esbenp.prettier-vscode",
+  ],
+}

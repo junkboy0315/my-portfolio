@@ -11,7 +11,6 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import React from 'react';
 import Helmet from 'react-helmet';
-import 'string.prototype.startswith';
 import Header from './Header';
 import RipIe from './RipIe';
 

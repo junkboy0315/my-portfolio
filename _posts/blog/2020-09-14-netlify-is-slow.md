@@ -1,7 +1,6 @@
 ---
 layout: blog
 title: Netlifyは遅い
-summary: Netlifyはスループットが非常に悪いようです
 date: 2020-09-14T15:00:00Z
 dateModified: 2020-09-14T15:00:00Z
 ---

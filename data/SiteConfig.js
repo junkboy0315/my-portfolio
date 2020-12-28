@@ -7,5 +7,5 @@ module.exports = {
     'SPA,Serverless,サーバーレス,Lambda,AWS,React,Redux,Angular,フリーランス',
   siteUrl: 'https://www.yuuniworks.com',
   siteLogo: '/images/logo_for_schema.png',
-  googleAnalyticsID: 'UA-116967778-1',
+  googleAnalyticsID: 'G-D8NN3K0L9X',
 };

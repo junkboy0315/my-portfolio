@@ -30,7 +30,6 @@ function SEO({ postNode, metaData }) {
     _metaData.title = `${postNode.frontmatter.title} / Yuuniworks Blog`;
     _metaData.description = postNode.excerpt;
     _metaData.keywords = config.siteKeywords;
-    _metaData.image = config.siteUrl + postNode.frontmatter.thumbnail;
   }
 
   // override _metadata if metadata is set manually
@@ -113,7 +112,6 @@ function SEO({ postNode, metaData }) {
         '@id': `${config.siteUrl}/blog${postNode.fields.slug}`,
       },
       headline: postNode.frontmatter.title,
-      image: [`${config.siteUrl}${postNode.frontmatter.thumbnail}`],
       datePublished: postNode.frontmatter.date,
       dateModified: postNode.frontmatter.dateModified,
       author: {
@@ -128,7 +126,6 @@ function SEO({ postNode, metaData }) {
           url: `${config.siteUrl}/images/logo_for_schema.png`,
         },
       },
-      description: postNode.frontmatter.summary,
     });
   }
 

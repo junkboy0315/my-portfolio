@@ -1,10 +1,6 @@
 const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
 
-// to fix gatsby-remark-relative-images error
-// see: https://github.com/danielmahon/gatsby-remark-relative-images/issues/6#issuecomment-419667172
-require('babel-polyfill');
-
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
 
@@ -39,7 +35,7 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     `)
-      .then(result => {
+      .then((result) => {
         result.data.allMarkdownRemark.edges.forEach(({ node }) => {
           createPage({
             path: `/blog${node.fields.slug}`,

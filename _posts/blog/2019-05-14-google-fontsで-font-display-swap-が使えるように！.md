@@ -1,10 +1,8 @@
 ---
 layout: blog
 title: 'Google Fontsで`font-display:swap`が使えるように！'
-summary: クエリパラメータで指定することが可能になりました。
 date: 2019-05-14T05:36:39.770Z
 dateModified: 2019-05-14T05:36:39.812Z
-thumbnail: /blogImages/20180518.png
 ---
 
 Google Fonts を使ったとき、CSS に`font-display: swap`が設定されていないために、フォントデータの読み込み中に文字が消えてしまうという問題がありました。

@@ -8,7 +8,7 @@ import svgMail from '../icons/footer-mail.svg';
 import svgPin from '../icons/footer-pin.svg';
 import { rhythm } from '../utils/typography';
 
-const FooterSection = props => {
+const FooterSection = (props) => {
   const footerInfo = [
     {
       imgPath: svgForm,
@@ -72,7 +72,7 @@ const FooterSection = props => {
       <SectionHeader text="お問い合わせ・ご連絡先" colorNumber="2" />
 
       <div css={styles.container}>
-        {footerInfo.map(info => (
+        {footerInfo.map((info) => (
           <a
             href={info.link || null}
             onClick={info.onClick || null}

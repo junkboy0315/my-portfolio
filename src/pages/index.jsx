@@ -1,4 +1,5 @@
 import React from 'react';
+import Layout from '../components/Layout';
 import ModalConductor from '../components/ModalConductor';
 import SEO from '../components/SEO';
 import '../css/global.css';
@@ -9,7 +10,6 @@ import PerformanceSection from '../sections/PerformanceSection';
 import ProfileSection from '../sections/ProfileSection';
 import SkillSection from '../sections/SkillSection';
 import TopSection from '../sections/TopSection';
-import Layout from '../components/Layout';
 
 class IndexPage extends React.Component {
   constructor(props) {

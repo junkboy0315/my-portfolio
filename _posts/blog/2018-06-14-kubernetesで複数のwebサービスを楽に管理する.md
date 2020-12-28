@@ -1,10 +1,8 @@
 ---
 layout: blog
 title: Kubernetesで複数のWebサービスを楽に管理する
-summary: バーチャルホストと証明書自動更新の機能を実装し、Kubernetesで複数ドメインのWebサービスを楽に管理するための環境構築を行いました。
 date: '2018-06-14T11:22:26+09:00'
 dateModified: '2018-06-14T11:22:26+09:00'
-thumbnail: /blogImages/20180614.png
 ---
 
 複数ドメインの Web サービスを Kubernetes 上で楽に管理するための環境構築を行ったので、手順をメモしておきます。詳細は参考サイトに非常にわかりやすくまとまっているので、ご参照ください。なお、環境は Google Kubernetes Engine を想定しています。
@@ -90,7 +88,7 @@ kubectl edit svc nginx-ingress-controller --namespace=kube-system
 
 ```yaml
 # type: LoadBalancer の直下に下記を追加する
-loadBalancerIP: "1.23.4.56"
+loadBalancerIP: '1.23.4.56'
 ```
 
 ### 4. DNS の設定変更
@@ -117,12 +115,12 @@ metadata:
     kubernetes.io/ingress.class: nginx
 spec:
   rules:
-  - host: some.dummy-url.com
-    http:
-      paths:
-      - backend:
-          serviceName: some-my-service
-          servicePort: 80
+    - host: some.dummy-url.com
+      http:
+        paths:
+          - backend:
+              serviceName: some-my-service
+              servicePort: 80
 ```
 
 ```
@@ -196,13 +194,13 @@ spec:
     kind: ClusterIssuer
   commonName: some.dummy-url.com # ドメイン
   dnsNames:
-  - some.dummy-url.com # ドメイン
+    - some.dummy-url.com # ドメイン
   acme:
     config:
-    - http01:
-        ingress: my-ingress # 使用しているIngressの名前
-      domains:
-      - some.dummy-url.com # ドメイン
+      - http01:
+          ingress: my-ingress # 使用しているIngressの名前
+        domains:
+          - some.dummy-url.com # ドメイン
 ```
 
 ```
@@ -228,19 +226,19 @@ metadata:
   name: my-ingress
   annotations:
     kubernetes.io/ingress.class: nginx
-    nginx.ingress.kubernetes.io/ssl-redirect: "true" # http=>httpsへリダイレクトする
+    nginx.ingress.kubernetes.io/ssl-redirect: 'true' # http=>httpsへリダイレクトする
 spec:
   tls: # 取得した証明書を使って通信させる
-  - secretName: some-dummyurl-tls
-    hosts:
-    - some.dummy-url.com
+    - secretName: some-dummyurl-tls
+      hosts:
+        - some.dummy-url.com
   rules:
-  - host: some.dummy-url.com
-    http:
-      paths:
-      - backend:
-          serviceName: some-my-service
-          servicePort: 80
+    - host: some.dummy-url.com
+      http:
+        paths:
+          - backend:
+              serviceName: some-my-service
+              servicePort: 80
 ```
 
 もし、nginx-ingress の使用をやめて 標準の Ingress Controller である GLBC に戻したい場合は、下記の手順を行います。
