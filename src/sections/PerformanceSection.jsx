@@ -6,15 +6,31 @@ import SectionContainer from '../components/SectionContainer';
 import SectionHeader from '../components/SectionHeader';
 import WhiteBox from '../components/WhiteBox';
 import jissekiCompare from '../images/jisseki-compare.png';
+import jissekiGoodmenu from '../images/jisseki-goodmenu.png';
 import jissekiNote from '../images/jisseki-note.png';
 import jissekiPict from '../images/jisseki-pict.png';
 import jissekiRebalancer from '../images/jisseki-rebalancer.jpg';
 import jissekiTravelrPng from '../images/jisseki-travelr.png';
-import jissekiYuuniJpg from '../images/jisseki-yuuni.jpg';
 import { rhythm } from '../utils/typography';
 
 const PerformanceSection = () => {
   const performances = [
+    {
+      name: 'GoodMenu',
+      description:
+        '飲食店の紙メニューを電子化しスマホで見られるようにするためのクラウドサービスです。',
+      techStack: [
+        { name: 'React', description: 'UI' },
+        { name: 'Terraform', description: 'インフラ管理' },
+        { name: 'Django', description: 'バックエンド' },
+        { name: 'Golang', description: 'バックエンド' },
+        { name: 'GCP Cloud Build', description: 'CI/CD' },
+        { name: 'GCP Cloud Run', description: 'コンテナ管理' },
+        { name: 'GCP Cloud SQL', description: 'データベース' },
+      ],
+      webpageURL: 'https://goodmenu.io',
+      imgPath: jissekiGoodmenu,
+    },
     {
       name: 'react-compare-image',
       description:
@@ -85,23 +101,6 @@ const PerformanceSection = () => {
       githubURL: 'https://github.com/junkboy0315/markdown-notes',
       imgPath: jissekiNote,
     },
-    {
-      name: 'Yuuniworks Web',
-      description:
-        '当サイトです。静的サイトジェネレータのGatsbyを使って作成しています。',
-      techStack: [
-        { name: 'Gatsby', description: 'Static Site Generator' },
-        { name: 'GraphQL', description: 'クエリ言語' },
-        { name: 'AWS Lambda', description: '問い合わせフォーム用バックエンド' },
-        { name: 'AWS SES', description: '問い合わせフォーム用バックエンド' },
-        { name: 'Netlify CMS', description: 'CMS' },
-        { name: 'Sentry', description: 'クライアントサイドのエラー収集' },
-      ],
-      webpageURL: 'https://www.yuuniworks.com',
-      githubURL: 'https://github.com/junkboy0315/yuuni-web',
-      blogPath: '/blog/2018-04-09-jamstackなwebサイトの作成/',
-      imgPath: jissekiYuuniJpg,
-    },
   ];
 
   const styles = {
@@ -166,7 +165,7 @@ const PerformanceSection = () => {
 
       {/* グリッド始点 */}
       <div css={styles.grid}>
-        {performances.map(performance => (
+        {performances.map((performance) => (
           <WhiteBox key={performance.name} css={styles.whiteBox}>
             <a
               href={performance.webpageURL}
@@ -216,7 +215,7 @@ const PerformanceSection = () => {
             )}
 
             <ul css={styles.techStackGrid}>
-              {performance.techStack.map(tech => (
+              {performance.techStack.map((tech) => (
                 <span
                   data-for={tech.name + tech.description}
                   data-tip
