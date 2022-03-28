@@ -5,17 +5,25 @@ import IconExtLink from '../components/IconExtLink';
 import Logo from '../components/Logo';
 import arrowSvg from '../icons/arrow.svg';
 import topImageJpg from '../images/top-image.jpg';
+import { useWindowSize } from '../utils/useWindowSize';
+import myStyles from './TopSection.module.css';
 
 const TopSection = () => {
   const [isTopImageLoaded, setIsTopImageLoaded] = useState(false);
+
+  const { height: windowInnerHeight } = useWindowSize({
+    ignoreHeightChange: true,
+  });
+
   const styles = {
+    // NOTE: css modulesにもスタイルを書いているので注意
     container: {
       alignItems: 'center',
       background: `#6292F1 url("${topImageJpg}") no-repeat center center`,
       backgroundSize: 'cover',
       display: 'flex',
       flexDirection: 'column',
-      height: '100vh',
+      height: `${windowInnerHeight}px`,
       justifyContent: 'center',
       paddingTop: '40px',
     },
@@ -48,7 +56,7 @@ const TopSection = () => {
   }, []);
 
   return isTopImageLoaded ? (
-    <section id="top" css={styles.container}>
+    <section id="top" css={styles.container} className={myStyles.container}>
       <div css={styles.logo}>
         <Logo />
       </div>
