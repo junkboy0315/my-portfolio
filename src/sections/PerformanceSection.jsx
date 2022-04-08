@@ -7,10 +7,7 @@ import SectionHeader from '../components/SectionHeader';
 import WhiteBox from '../components/WhiteBox';
 import jissekiCompare from '../images/jisseki-compare.png';
 import jissekiGoodmenu from '../images/jisseki-goodmenu.png';
-import jissekiNote from '../images/jisseki-note.png';
 import jissekiPict from '../images/jisseki-pict.png';
-import jissekiRebalancer from '../images/jisseki-rebalancer.jpg';
-import jissekiTravelrPng from '../images/jisseki-travelr.png';
 import { rhythm } from '../utils/typography';
 
 const PerformanceSection = () => {
@@ -18,7 +15,7 @@ const PerformanceSection = () => {
     {
       name: 'GoodMenu',
       description:
-        '飲食店の紙メニューを電子化しスマホで見られるようにするためのクラウドサービスです。',
+        '飲食店の紙メニューを電子化するSaaSです。個人で運営しています。銀座のイタリアンレストランでも採用されています✨',
       techStack: [
         { name: 'React', description: 'UI' },
         { name: 'Terraform', description: 'インフラ管理' },
@@ -34,7 +31,7 @@ const PerformanceSection = () => {
     {
       name: 'react-compare-image',
       description:
-        'スライダを使って画像を比較するためのReactコンポーネントです。世界中で利用されています。',
+        'スライダを使って画像を比較するために作った、Reactコンポーネントです。Uber社のWebサイトでも利用されています',
       techStack: [{ name: 'React', description: 'UI' }],
       webpageURL: 'https://www.npmjs.com/package/react-compare-image',
       githubURL: 'https://github.com/junkboy0315/react-compare-image',
@@ -42,7 +39,8 @@ const PerformanceSection = () => {
     },
     {
       name: 'Pairwise Pict Online',
-      description: 'ペアワイズ法に基づきテストケースを生成できるサービスです。',
+      description:
+        'ペアワイズ法に基づきテストケースを生成できるサービスです。なぜか共産圏からのアクセスが多め。何に使っているんだろう…',
       techStack: [
         { name: 'create-react-app', description: 'Front-end Framework' },
         { name: 'CircleCI', description: 'CI/CD' },
@@ -53,53 +51,6 @@ const PerformanceSection = () => {
       webpageURL: 'https://pairwise.yuuniworks.com',
       githubURL: 'https://github.com/junkboy0315/pairwise-pict-online',
       imgPath: jissekiPict,
-    },
-    {
-      name: 'Portfolio Rebalancer',
-      description:
-        'ポートフォリオのリバランスを簡単に行えるようにすることで、資産運用を支援するツールです。',
-      techStack: [
-        { name: 'Vue.js/Vuex', description: 'UI/State管理' },
-        { name: 'Nuxt.js', description: 'Vue.jsフレームワーク' },
-        { name: 'Bulma', description: 'CSSライブラリ' },
-        { name: 'Firebase Auth', description: '認証管理' },
-        { name: 'Firebase Firestore', description: 'データベース' },
-      ],
-      webpageURL: 'http://rebalancer.yuuniworks.com',
-      githubURL: 'https://github.com/junkboy0315/rebalancer',
-      imgPath: jissekiRebalancer,
-    },
-    {
-      name: 'Travelr',
-      description:
-        '古い写真と新しい写真を比較して楽しむ写真投稿サービスです。デモ用に作成したものです。',
-      techStack: [
-        { name: 'React/Redux', description: 'UI/State管理' },
-        { name: 'material-ui', description: 'UIライブラリ' },
-        { name: 'Workbox', description: 'PWA対応' },
-        { name: 'jest/enzyme', description: 'テスト' },
-        {
-          name: 'Firebase',
-          description: '認証管理、ストレージ、ファンクション',
-        },
-        { name: 'GCP Cloud SQL', description: 'データベース' },
-      ],
-      webpageURL: 'http://travelr.yuuniworks.com',
-      githubURL: 'https://github.com/junkboy0315/travelr',
-      blogPath: '/blog/2018-07-31-デモシステムを作成しました/',
-      imgPath: jissekiTravelrPng,
-    },
-    {
-      name: 'Yuuniworks Notes',
-      description:
-        'VuePressで作成したドキュメントサイトです。Algoliaによる全文検索を実装しています。',
-      techStack: [
-        { name: 'VuePress', description: 'Static Site Generator' },
-        { name: 'Algolia DocSearch', description: '高度な全文検索' },
-      ],
-      webpageURL: 'https://note.yuuniworks.com',
-      githubURL: 'https://github.com/junkboy0315/markdown-notes',
-      imgPath: jissekiNote,
     },
   ];
 
@@ -161,7 +112,11 @@ const PerformanceSection = () => {
 
   return (
     <SectionContainer id="performance" fadeOnAppear>
-      <SectionHeader text="実績" colorNumber="1" />
+      <SectionHeader
+        text="実績"
+        subText="※ 受託案件は公開できないため、自社運営のサービスのみ掲載しております"
+        colorNumber="1"
+      />
 
       {/* グリッド始点 */}
       <div css={styles.grid}>

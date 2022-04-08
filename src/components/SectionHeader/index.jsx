@@ -6,15 +6,17 @@ const propTypes = {
   colorNumber: PropTypes.string,
   text: PropTypes.string,
   link: PropTypes.string,
+  subText: PropTypes.string,
 };
 
 const defaultProps = {
   colorNumber: null,
   text: null,
   link: null,
+  subText: '',
 };
 
-const SectionHeader = ({ colorNumber, text, link }) => {
+const SectionHeader = ({ colorNumber, text, link, subText }) => {
   const colors = {
     1: '#262626',
     2: '#ffffff',
@@ -26,6 +28,7 @@ const SectionHeader = ({ colorNumber, text, link }) => {
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
+      marginBottom: '50px',
     },
     h2: {
       color: charColor,
@@ -33,12 +36,15 @@ const SectionHeader = ({ colorNumber, text, link }) => {
     hr: {
       backgroundColor: charColor,
       height: '3px',
-      marginBottom: '50px',
       width: '54px',
     },
     link: {
       color: charColor,
       textDecoration: 'none',
+    },
+    subText: {
+      color: '#777',
+      fontSize: '.8rem',
     },
   };
 
@@ -54,6 +60,7 @@ const SectionHeader = ({ colorNumber, text, link }) => {
         )}
       </h2>
       <hr css={styles.hr} />
+      {subText && <div style={styles.subText}>{subText}</div>}
     </div>
   );
 };

@@ -139,9 +139,7 @@ class Header extends React.Component {
         cursor: 'pointer',
         opacity: shouldBeHide ? settings.opacityHide : 1,
         textDecoration: 'none',
-        transition: `background ${settings.transitionSpeed} ease-out, opacity ${
-          settings.transitionSpeed
-        } ease-out`,
+        transition: `background ${settings.transitionSpeed} ease-out, opacity ${settings.transitionSpeed} ease-out`,
         '.active': {
           background: 'rgba(100, 100, 110, 0.95)',
         },
@@ -209,7 +207,7 @@ class Header extends React.Component {
         )}
 
         <ul css={styles.menu}>
-          {menuItem.map(item => {
+          {menuItem.map((item) => {
             if (isRootPath && item.path.substr(0, 2) === '/#') {
               return (
                 <LinkForScroll
@@ -250,7 +248,7 @@ class Header extends React.Component {
         <div
           css={styles.humbergerIcon}
           onClick={this.onHumbergerClick}
-          onKeyDown={e => {
+          onKeyDown={(e) => {
             if (e.keyCode === 13) this.onHumbergerClick();
           }}
           role="button"
