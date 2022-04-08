@@ -140,8 +140,13 @@ const ProfileSection = () => {
             <span css={styles.keirekiGray}>(2018.4 - )</span>
           </p>
           <p>
-            フリーランスエンジニアとして独立。フルスタックに活動中。
-            APIとフロントエンドが分離された美しく優しい世界を広めるべく、日々邁進中。
+            ものづくりをしたい気持ちを捨てきれず、転職。
+            <br />
+            <br />
+            都市部のスタートアップにフルリモートで参画し、React界隈をガッツリ担当することが多いです。
+            <br />
+            <br />
+            週3日働いて週2日は好きなことをやるというキリギリスのような生活をしています。
           </p>
 
           <Hr />
@@ -152,30 +157,27 @@ const ProfileSection = () => {
             <span css={styles.keirekiGray}>(2008.4 - 2018.3)</span>
           </p>
           <p>
-            自治体のIT部門において主にインフラ管理を担当。
+            自治体のIT部門においてシステム管理者として勤務。カオスなインフラを
             <a
               href="https://www.nutanix.com/jp/company/local-customers/hamada-city"
               target="_blank"
               rel="noopener noreferrer"
               css={styles.link}
             >
-              Nutanixによるプライベートクラウド基盤の構築
+              Nutanixで刷新
               <IconExtLink />
             </a>
-            や、
+            したり、
             <a
               href="https://jpn.nec.com/case/city.hamada/index.html"
               target="_blank"
               rel="noopener noreferrer"
               css={styles.link}
             >
-              SDNの導入
+              Software-Defined Networkを導入
               <IconExtLink />
             </a>
-            などを手がける。
-          </p>
-          <p>
-            またプライベートにおいて、React、NodeJS、Docker、Kubernatesなどの技術を独学する。
+            するなど。
           </p>
 
           <Hr text="(様々な紆余曲折)" />
