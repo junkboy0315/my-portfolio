@@ -137,7 +137,7 @@ const ProfileSection = () => {
           <p>
             <b>フリーランスエンジニア</b>
             <br />
-            <span css={styles.keirekiGray}>(2018.4 - )</span>
+            <span css={styles.keirekiGray}>(2018.4 - Now)</span>
           </p>
           <p>
             ものづくりをしたい気持ちを捨てきれず、転職。
@@ -157,7 +157,7 @@ const ProfileSection = () => {
             <span css={styles.keirekiGray}>(2008.4 - 2018.3)</span>
           </p>
           <p>
-            自治体のIT部門においてシステム管理者として勤務。カオスなインフラを
+            職員数1,500名程度の自治体のIT部門において、システム管理者として勤務。カオスなインフラを
             <a
               href="https://www.nutanix.com/jp/company/local-customers/hamada-city"
               target="_blank"
