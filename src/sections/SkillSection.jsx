@@ -59,12 +59,12 @@ const SkillSection = props => {
   const skills = {
     フロントエンド: {
       'JavaScript / Typescript': 3,
-      'React / Redux': 3,
-      'Vue.js / Vuex': 3,
+      'React / React Native': 3,
+      'React Query / Redux': 3,
+      'Next.js / Remix': 3,
       Jest: 3,
-      'Next.js / Nuxt.js': 2,
       'PWA / Workbox': 2,
-      GraphQL: 1,
+      GraphQL: 2,
       RxJS: 1,
     },
     バックエンド: {
