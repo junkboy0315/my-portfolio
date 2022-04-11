@@ -8,7 +8,7 @@ import Skill from '../components/Skill';
 import WhiteBox from '../components/WhiteBox';
 import questionSvg from '../icons/question.svg';
 
-const SkillSection = props => {
+const SkillSection = (props) => {
   const styles = {
     grid: {
       display: 'grid',
@@ -89,7 +89,7 @@ const SkillSection = props => {
             <div
               css={styles.helpButton}
               onClick={() => props.setCurrentModal('SKILL_HELP')}
-              onKeyDown={e => {
+              onKeyDown={(e) => {
                 if (e.keyCode === 13) props.setCurrentModal('SKILL_HELP');
               }}
               role="button"
@@ -97,7 +97,7 @@ const SkillSection = props => {
             >
               <img src={questionSvg} alt="hint button" />
             </div>
-            {Object.keys(skills['フロントエンド']).map(skill => (
+            {Object.keys(skills['フロントエンド']).map((skill) => (
               <Skill
                 skillName={skill}
                 skillLevel={skills['フロントエンド'][skill]}
@@ -110,7 +110,7 @@ const SkillSection = props => {
         <WhiteBox css={styles.whiteBox}>
           <div>
             <h3>バックエンド関連</h3>
-            {Object.keys(skills['バックエンド']).map(skill => (
+            {Object.keys(skills['バックエンド']).map((skill) => (
               <Skill
                 skillName={skill}
                 skillLevel={skills['バックエンド'][skill]}
