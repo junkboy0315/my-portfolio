@@ -41,6 +41,10 @@ const TemplateWrapper = ({ children, location }) => {
           rel="stylesheet"
         />
         <meta name="robots" content="noindex"></meta>
+        <meta
+          name="google-site-verification"
+          content="LrV12wFqJ2dGgGOeLkC-nxYWoDkhoqG_636LifMXTDo"
+        />
       </Helmet>
       <Header location={location} />
 
