@@ -40,6 +40,7 @@ const TemplateWrapper = ({ children, location }) => {
           href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&amp;subset=japanese&amp;display=swap"
           rel="stylesheet"
         />
+        <meta name="robots" content="noindex"></meta>
       </Helmet>
       <Header location={location} />
 
